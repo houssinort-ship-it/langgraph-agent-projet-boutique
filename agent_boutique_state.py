@@ -42,7 +42,7 @@ PROMPT = (
 "puis agis seulement si la règle est respectée ; sinon explique pourquoi."
 )
 llm = ChatGoogleGenerativeAI(
-    model=os.getenv("MODELE", "gemini-2.5-flash"), temperature=0
+    model=os.getenv("MODELE", "gemini-3.8-flash"), temperature=0
 ).bind_tools(OUTILS)
 # ---------- État du graphe ----------
 class Etat(TypedDict):

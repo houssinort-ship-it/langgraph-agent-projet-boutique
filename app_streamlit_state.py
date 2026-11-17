@@ -64,3 +64,8 @@ question = st.chat_input("Votre question...", disabled=bool(actions))
 if question:
     st.chat_message("user").markdown(question)
     envoi_au_graphe = {"messages": [HumanMessage(question)]}
+# ---------- Exécution du graphe ----------
+if envoi_au_graphe is not None:
+    with st.spinner("Thought..."):
+        app.invoke(envoi_au_graphe, config) # le résultat est enregistré dans l'état
+    st.rerun() # réaffichage à partir du nouvel état
